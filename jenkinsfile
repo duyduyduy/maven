@@ -10,12 +10,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                cd hello-java
                 sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') { 
             steps {
-                cd hello-java
+                
                 sh 'mvn test' 
             }
             post {
