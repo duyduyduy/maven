@@ -1,13 +1,16 @@
 
 
 pipeline {
+      dir {
+                   path : hello-java
+                    }
     agent  any
-    
+    }
     stages {
         stage('Build') {
             steps {
                 sh 'ls'
-                    sh "cd hello-java"
+                  
                 sh 'mvn -B -DskipTests clean package'
             }
         }
